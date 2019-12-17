@@ -24,7 +24,12 @@ app.post('/show', ( req , res ) => {
       return new Book(book.volumeInfo.imageLinks.smallThumbnail, book.volumeInfo.title, book.volumeInfo.authors, book.volumeInfo.description);
     });
     res.render('pages/searches/show', { results : results });
-  });
+  })
+    .catch( error => {
+      console.log(error);
+      res.render('pages/error');
+      res.status(500).send(error.message);
+    })
 })
 
 function Book(img_url='public/styles/images/placeholderbook.png', title='Title', author='Author', description='No description') {
