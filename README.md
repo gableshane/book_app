@@ -22,12 +22,12 @@ We are building this app so that users may quickly search for books via a third 
 ## Credits and Collaborations
 
 -->
-Number and name of feature: ________________________________
+Number and name of feature: As a user, I want my application to load quickly so that I have an enjoyable experience.
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 minutes
 
-Start time: _____
+Start time: 9:36
 
-Finish time: _____
+Finish time: 10:06
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30 minutes
