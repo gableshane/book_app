@@ -9,9 +9,12 @@ app.use(express.static('./public'));
 
 app.set('view engine', 'ejs');
 
-app.get('/hello', ( req , res) => {
+app.get('/', ( req , res) => {
   res.render('pages/index');
 });
+app.post('/results', ( req , res ) => {
+  console.log(req.body);
+})
 
 app.listen(PORT, () => {
   console.log('listening on', PORT);

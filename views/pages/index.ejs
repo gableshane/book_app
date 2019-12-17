@@ -7,14 +7,21 @@
 </head>
 <body>
   <header>
-    <h1>Hello World!</h1>
+    <h1>Booklist</h1>
   </header>
-  <section>
-    <ul>
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
-    </ul>
-  </section>
+  <main>
+    <form method="POST" action="/results">
+      <label>Search books
+      <input name="placeholder" type="text">
+      </label>
+      <label> Search by Author
+      <input type="radio" name="searchType" value="Author">
+    </label>
+    <label> Search by Title
+      <input type="radio" name="searchType" value="Title">
+      </label>
+      <input type="submit" value="search for a book">
+    </form>
+  </main>
 </body>
 </html>
