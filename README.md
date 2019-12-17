@@ -51,3 +51,14 @@ Start time: 10:23
 Finish time: 11:47
 
 Actual time needed to complete: 1 hour 24 minutes
+
+Number and name of feature: As a user, I want to view any error messages that occur during the usage of my book list application so that I know if something has gone wrong.
+
+Estimate of time needed to complete: 5 minutes
+
+Start time: 11:48
+
+Finish time: 11:54
+
+Actual time needed to complete: 6 minutes
+
