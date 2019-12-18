@@ -24,14 +24,13 @@ app.get('/', ( req , res) => {
   let SQL = 'SELECT * FROM books';
   const booksData = [];
   client.query(SQL).then( sqlData => {
-    console.log(sqlData.rows);
     if (sqlData.rows.length > 0) {
       sqlData.rows.forEach( val => {
         booksData.push(new Book(val.image_url, val.title, val.author, val.description));
       });
     }
+    res.render('pages/index', { booksData : booksData, count : sqlData.rows.length });
   });
-  res.render('pages/index', { booksData : booksData});
 });
 app.post('/show', ( req , res ) => {
   superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.searchType}+in${req.body.searchType}:${req.body.query}`).then( data => {
@@ -50,6 +49,14 @@ app.post('/show', ( req , res ) => {
       res.status(500).send(error.message);
     })
 })
+app.get('/books/:id', ( req, res ) => {
+  let SQL = 'SELECT * FROM books WHERE id=$1'
+  let query = [req.params.id];
+  client.query(SQL, query).then( sql => {
+    let obj = sql.rows[0];
+    res.render('pages/detail', { oneBook : obj })
+  })
+});
 
 function Book(img_url='public/styles/images/placeholderbook.png', title='Title', author='Unknown', description='No description') {
   this.img_url = img_url;
