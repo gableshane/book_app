@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Results</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/modules.css">
 </head>
 <body>
-  <h1>TEST</h1>
-  <ul>
   <% results.forEach( result => { %>
-    <li><%= result.title %></li>
+    <div>
+    <img src='<%=result.img_url %>'/>
+    <h3><%= result.title %></h3>
+    <h3>by <%= result.author %></h3>
+    <p><%= result.description %></p>
+    </div>
     <%}) %>
-  </ul>
 </body>
-</html>
+</html> 
