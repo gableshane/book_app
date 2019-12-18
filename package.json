@@ -12,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
+    "env": "0.0.2",
     "express": "^4.17.1",
     "pg": "^7.15.0",
     "superagent": "^5.1.2"

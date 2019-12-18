@@ -1,3 +1,7 @@
-h1 {
-  background: black;
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  background-color: darkgray;
 }

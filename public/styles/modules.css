@@ -1,0 +1,17 @@
+div {
+  border: 1px solid black;
+}
+header {
+  background-color: black;
+  color: white;
+}
+header h1 {
+  height: 3em;
+  padding-top: 1%;
+}
+header div {
+  background-color: grey;
+  height: 2em;
+  padding-top: .5%;
+  text-align: center;
+}
