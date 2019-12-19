@@ -10,7 +10,7 @@
     <section id="view">
   <header>
     <h1>Best Books!</h1>
-    <%- include('layout/nav.ejs') %>     
+    <%- include('../pages/layout/nav.ejs') %>     
 
     <h2>Save Results</h2>
   </header>
@@ -24,7 +24,7 @@
             <li><%= oneBook.bookshelf %></li>
             <button id="editDetail">Edit Details</button>
         </ul>
-        <%- include('../layout/edit.ejs') %>
+        <%- include('../pages/layout/edit.ejs') %>
       </div>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="../app.js"></script>
