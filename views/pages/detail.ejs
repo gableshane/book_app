@@ -1,4 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Proof of Life</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <section id="view">
+  <header>
+    <h1>Best Books!</h1>
+    <%- include('layout/nav.ejs') %>     
 
+    <h2>Save Results</h2>
+  </header>
 <div>
         <ul>
             <img src="<%= oneBook.image_url %>"/>
@@ -13,3 +28,7 @@
       </div>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="../app.js"></script>
+
+</body>
+
+</html>

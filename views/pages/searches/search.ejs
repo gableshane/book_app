@@ -4,15 +4,19 @@
   <meta charset="UTF-8">
   <title>Search Results</title>
   <link rel="stylesheet" href="styles/reset.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/modules.css">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+  <section id="view">
+    <header>
+      <h1>Best Books!</h1>
+      <%- include('../layout/nav.ejs') %>     
+       <h2>Search Results</h2>
+    </header>
     <div>
     <ul>
       <% results.forEach( result => { %>
-        <img src="<%= result.img_url %>"/>
+        <img src="<%= result.img_url %>" class="itemone"/>
         <li id="searchTitle"><%= result.title %> </li>
         <li id="searchName"><%= result.author %> </li>
         <li id="searchDesc"><%= result.description %> </li>
@@ -27,12 +31,13 @@
       <input name="description" class="hideForm" type="hidden" value="<%= result.description %>">
       <input name="isbn" class="hideForm" type="hidden" value="<%= result.isbn %>">
       <input name="image_url" type="hidden" value="<%= result.img_url %>">
-      <input name="bookshelf" class="hideForm" type="hidden" value="<%= result.bookshelf %>">
-      <input id="submit" type="hidden" value="Save">
+      <input name="bookshelf" class="hideForm" type="hidden" value="<%= result.bookshelf %>" required>
+      <input id="submit" type="submit" value="Save">
     </form>
   </div>
     <%}) %>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
+  </section>
   </body>
 </html> 
