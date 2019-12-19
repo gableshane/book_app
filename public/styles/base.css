@@ -1,7 +1,5 @@
   
 *{
-  width: 100%;
-
   background:lightgrey
 }
 html,body{
@@ -52,7 +50,6 @@ input[type=submit]{
 
 
 li{
-  border:solid 2px red;
   display: flex;
   flex-direction: column;
   text-align: center;

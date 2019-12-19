@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/modules.css">
+</head>
+<body>
+
+
+  <!-- <% results.forEach( result => { %>
+    <div>
+    <img src='<%=result.img_url %>'/>
+    <h3><%= result.title %></h3>
+    <h3>by <%= result.author %></h3>
+    <p><%= result.description %></p>
+    <p><%= result.isbn %></p>
+    <p><%= result.bookshelf %></p>
+    <button id="selector">Select</button> -->
+    <div>
+    <ul>
+      <% results.forEach( result => { %>
+        <img src="<%= result.img_url %>" />
+        <li id="searchTitle"><%= result.title %> </li>
+        <li id="searchName"><%= result.author %> </li>
+        <li id="searchDesc"><%= result.description %> </li>
+        <li><%= result.isbn %></li>
+        <li><%= result.bookshelf %></li>
+        <button id="selector">Select</button>
+        <%}) %>
+    </ul>
+
+    <form method="POST" action="/books/<%= result.id %>">
+      <input name="title" class="hideForm" type="hidden" value="<%= result.title %>">
+      <input name="author" class="hideForm" type="hidden" value="<%= result.author %>">
+      <input name="description" class="hideForm" type="hidden" value="<%= result.description %>">
+      <input name="isbn" class="hideForm" type="hidden" value="<%= result.isbn %>">
+      <input name="image_url" type="hidden" value="<%= result.img_url %>">
+      <input name="bookshelf" class="hideForm" type="hidden" value="<%= result.bookshelf %>">
+      <input id="submit" type="submit" value="Save">
+    </form>
+  </div>
+    <%}) %>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+  </body>
+</html> 

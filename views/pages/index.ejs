@@ -24,9 +24,9 @@
   </header>
   <main>
     <section id="form">
-    <form  id="item1" method="POST" action="/show">
+    <form  id="item1" method="POST" action="/search ">
       <label class="items">
-      <input name="query" type="text" value="Enter a title or author">
+      <input name="query" type="text">
       </label>
       <label class="items"> <span>Author</span>
       <input type="radio" name="searchType" value="Author">
@@ -40,6 +40,21 @@
 
     </form>
   </section>
+  <span><%= count %></span>
+    <% booksData.forEach( book => { %>
+      <div>
+      <img src="<%=book.img_url %>"/>
+      <h3><%= book.title %></h3>
+      <h3>by <%= book.author %></h3>
+      <p><%= book.description %></p>
+      <p><%= book.isbn %></p>
+      <p><%= book.bookshelf %></p>
+      <form action="/books/<%= book.id %>" method="GET" >
+      <!-- <input type="hidden" name="id" value="<%= book.id %>"/> -->
+      <input type="submit" value="View Details"/>
+      </form>
+      </div>
+      <%}) %>
   </main>
 </section>
 </body>
