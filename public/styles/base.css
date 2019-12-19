@@ -1,7 +1,81 @@
-* {
-  box-sizing: border-box;
+  
+*{
+  background:lightgrey
 }
-body {
+html,body{
   width: 100%;
-  background-color: darkgray;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  background: black;
+}
+
+#view{
+  width:60%;
+  margin-left:20%;
+  margin-right:20%;
+}
+
+main{
+flex:1;
+
+}
+
+
+
+h1{
+  background:black;
+  color:white;
+
+}
+
+h2{
+  background: rgb(85, 84, 84);
+  color:white;
+  font-size:20px;
+}
+
+input {
+  font-size:20px;
+}
+
+input[type=text]{
+  background: white;
+}
+
+input[type=submit]{
+  background: black;
+  color: aliceblue;
+}
+
+
+li{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top:0.5em;
+}
+
+#searchTitle{
+  font-family: Arial, Helvetica, sans-serif;
+  font-style:bold;
+  
+}
+
+#searchDesc{
+  font-style: italic;
+  margin-tip:1em;
+}
+
+@media(min-width: 768px){
+  header,  section, footer {
+      max-width: 960px;
+  }
+  
+}
+
+@media only screen and (max-width: 500px) {
+  header, section, footer {
+      max-width: 500px;
+  }
 }

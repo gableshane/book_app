@@ -1,17 +1,39 @@
-div {
-  border: 1px solid black;
+h1{
+    height:120px;
 }
-header {
-  background-color: black;
-  color: white;
+
+h2{
+    height: 80px;
+    
 }
-header h1 {
-  height: 3em;
-  padding-top: 1%;
+
+label {
+    margin-top: 3em;
+    display: block;
 }
-header div {
-  background-color: grey;
-  height: 2em;
-  padding-top: .5%;
-  text-align: center;
+
+label > {
+    display: inline-block;
+    width: 50%;
 }
+
+input[type=text]{
+    height: 50px;
+
+}
+input[type=raido]{
+   float:right;
+
+}
+
+input[type=submit]{
+    height:50px;
+}
+
+
+.items{
+    height:50px;
+
+
+}
+
