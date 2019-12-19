@@ -9,28 +9,16 @@
   <link rel="stylesheet" href="styles/modules.css">
 </head>
 <body>
-
-
-  <!-- <% results.forEach( result => { %>
-    <div>
-    <img src='<%=result.img_url %>'/>
-    <h3><%= result.title %></h3>
-    <h3>by <%= result.author %></h3>
-    <p><%= result.description %></p>
-    <p><%= result.isbn %></p>
-    <p><%= result.bookshelf %></p>
-    <button id="selector">Select</button> -->
     <div>
     <ul>
       <% results.forEach( result => { %>
-        <img src="<%= result.img_url %>" />
+        <img src="<%= result.img_url %>"/>
         <li id="searchTitle"><%= result.title %> </li>
         <li id="searchName"><%= result.author %> </li>
         <li id="searchDesc"><%= result.description %> </li>
         <li><%= result.isbn %></li>
         <li><%= result.bookshelf %></li>
-        <button id="selector">Select</button>
-        <%}) %>
+        <button class="selector">Select</button>
     </ul>
 
     <form method="POST" action="/books/<%= result.id %>">
@@ -40,7 +28,7 @@
       <input name="isbn" class="hideForm" type="hidden" value="<%= result.isbn %>">
       <input name="image_url" type="hidden" value="<%= result.img_url %>">
       <input name="bookshelf" class="hideForm" type="hidden" value="<%= result.bookshelf %>">
-      <input id="submit" type="submit" value="Save">
+      <input id="submit" type="hidden" value="Save">
     </form>
   </div>
     <%}) %>

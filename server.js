@@ -27,10 +27,15 @@ const errorHandler = function (req , res) {
 // CALLBACK FUNCTION
 const queryById = function ( req , res ) {
   let query = [req.params.id];
-  let SQL = 'SELECT * FROM books WHERE id=$1'
+  let SQL = 'SELECT * FROM books WHERE id=$1';
+  let countBookshelf = 'SELECT DISTINCT bookshelf FROM books';
+  let bookshelves;
+  client.query(countBookshelf).then( sql => {
+    return bookshelves = sql.rows;
+  })
   client.query(SQL, query).then( sql => {
     let obj = sql.rows[0];
-    res.render('pages/detail', { oneBook : obj })
+    res.render('pages/detail', { oneBook : obj, bookShef : bookshelves });
   });
 }
 // CALLBACK FUNCTION

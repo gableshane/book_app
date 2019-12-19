@@ -102,3 +102,14 @@ Start time: 20:00
 Finish time: 21:20
 
 Actual time needed to complete: 1.33 hours
+
+
+Number and name of feature: 5. As a user, I want the application to be designed in a consistent way so that I do not experience any down time or slow load times.
+
+Estimate of time needed to complete:  30 minutes
+
+Start time: 10:55AM
+
+Finish time:
+
+Actual time needed to complete:
