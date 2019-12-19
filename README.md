@@ -83,7 +83,7 @@ Finish time: 1724
 Actual time needed to complete: 5.5 hours
 
 
-Number and name of feature: As a user, I want the ability to change details of a single book from the search results so that I can write in my custom details and assign the book to a bookshelf.
+Number and name of feature: 3. As a user, I want the ability to change details of a single book from the search results so that I can write in my custom details and assign the book to a bookshelf.
 
 Estimate of time needed to complete: 2 hours
 
@@ -92,3 +92,13 @@ Start time: 5:26
 Finish time: _____
 
 Actual time needed to complete: _____
+
+Number and name of feature: 4. As a user, I want the ability to add new books to my application so that my collection continues to grow.
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 20:00
+
+Finish time: 21:20
+
+Actual time needed to complete: 1.33 hours

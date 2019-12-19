@@ -15,7 +15,19 @@
     <h3><%= result.title %></h3>
     <h3>by <%= result.author %></h3>
     <p><%= result.description %></p>
-    </div>
+    <p><%= result.isbn %></p>
+    <p><%= result.bookshelf %></p>
+    <button id="selector">Select</button>
+    <form method="POST" action="/books/<%= result.id %>">
+      <input name="title" class="hideForm" type="text" value="<%= result.title %>">
+      <input name="author" class="hideForm" type="text" value="<%= result.author %>">
+      <input name="description" class="hideForm" type="text" value="<%= result.description %>">
+      <input name="isbn" class="hideForm" type="text" value="<%= result.isbn %>">
+      <input name="image_url" type="hidden" value="<%= result.img_url %>">
+      <input name="bookshelf" class="hideForm" type="text" value="<%= result.bookshelf %>">
+      <input id="submit" type="submit" value="Save">
+    </form>
+  </div>
     <%}) %>
-</body>
+  </body>
 </html> 
