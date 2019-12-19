@@ -22,12 +22,43 @@ We are building this app so that users may quickly search for books via a third 
 ## Credits and Collaborations
 
 -->
-Number and name of feature: ________________________________
+Number and name of feature: As a user, I want my application to load quickly so that I have an enjoyable experience.
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 minutes
 
-Start time: _____
+Start time: 9:36
 
-Finish time: _____
+Finish time: 10:06
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30 minutes
+
+Number and name of feature: As a user, I want to search the Google Books API so that I can view the results of my search.
+
+Estimate of time needed to complete: 15 minutes
+
+Start time: 10:07
+
+Finish time: 10:22
+
+Actual time needed to complete: 15 minutes
+
+Number and name of feature: As a user, I want to be able to browse the search results
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 10:23
+
+Finish time: 11:47
+
+Actual time needed to complete: 1 hour 24 minutes
+
+Number and name of feature: As a user, I want to view any error messages that occur during the usage of my book list application so that I know if something has gone wrong.
+
+Estimate of time needed to complete: 5 minutes
+
+Start time: 11:48
+
+Finish time: 11:54
+
+Actual time needed to complete: 6 minutes
+
