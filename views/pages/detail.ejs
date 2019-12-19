@@ -1,4 +1,20 @@
-<%- include('nav') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Proof of Life</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <section id="view">
+  <header>
+    <h1>Best Books!</h1>
+    <%- include('layout/nav.ejs') %>     
+
+    <h2>Save Results</h2>
+  </header>
+
 <section>
     <img src='<%=oneBook.image_url %>'/>
     <h3><%= oneBook.title %></h3>
@@ -7,3 +23,7 @@
     <p><%= oneBook.isbn %></p>
     <p><%= oneBook.bookshelf %></p>
 </section>
+</section>
+</body>
+
+</html>

@@ -64,7 +64,21 @@ li{
 
 #searchDesc{
   font-style: italic;
-  margin-tip:1em;
+  margin-tOp:1em;
+}
+
+.itemone{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#selector{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 @media(min-width: 768px){
