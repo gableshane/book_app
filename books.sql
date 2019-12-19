@@ -9,3 +9,4 @@ CREATE TABLE IF NOT EXISTS books (
   bookshelf TEXT
 );
 
+INSERT INTO books (author, title, image_url, description) VALUES ('test', 'test', '/placeholderbook.png', 'test');

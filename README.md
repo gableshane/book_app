@@ -62,11 +62,32 @@ Finish time: 11:54
 
 Actual time needed to complete: 6 minutes
 
-Number and name of feature: ________________________________
+Number and name of feature: As a user, I want all of my saved books to be displayed on the home page so that I can view all of the books from my collection in a single view.
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 45 minutes
 
-Start time: _____
+Start time: 0930
+
+Finish time: 1135
+
+Actual time needed to complete: 2 hours 5 minutes
+
+Number and name of feature: As a user, I want to request information about a single book so that I can view its additional details and share it by URL.
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 1230
+
+Finish time: 1724
+
+Actual time needed to complete: 5.5 hours
+
+
+Number and name of feature: As a user, I want the ability to change details of a single book from the search results so that I can write in my custom details and assign the book to a bookshelf.
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 5:26
 
 Finish time: _____
 

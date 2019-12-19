@@ -11,15 +11,13 @@
 <body>
   <header>
     <h1>Best Books!</h1>
-    <nav>
-      <!-- NAV MENU -->
-    </nav>
+    <%- include('nav') %>
     <div>
       <h2>Search by Title or Author</h2>
     </div>
   </header>
   <main>
-    <form method="POST" action="/show">
+    <form method="POST" action="/search">
       <label>Search books
       <input name="query" type="text">
       </label>
@@ -29,15 +27,19 @@
     <label> Search by Title
       <input type="radio" name="searchType" value="Title">
       </label>
-      <input type="submit" value="search for a book">
+      <input type="submit" value="search">
     </form>
     <span><%= count %></span>
     <% booksData.forEach( book => { %>
       <div>
-      <img src='<%=book.img_url %>'/>
+      <img src="<%=book.img_url %>"/>
       <h3><%= book.title %></h3>
       <h3>by <%= book.author %></h3>
       <p><%= book.description %></p>
+      <form action="/books/<%= book.id %>" method="GET" >
+      <!-- <input type="hidden" name="id" value="<%= book.id %>"/> -->
+      <input type="submit" value="View Details"/>
+      </form>
       </div>
       <%}) %>
   </main>

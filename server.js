@@ -1,10 +1,15 @@
+// DEPENDENCIES
 const express = require('express');
 const ejs = require('ejs');
 const superagent = require('superagent');
 const pg = require('pg');
 require('dotenv').config();
+const app = express();
+app.use(express.static('./public'));
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended: true}));
 
-
+// GLOBAL VARIABLES
 let books = [];
 const DATABASE_URL = process.env.DATABASE_URL;
 const PORT = process.env.PORT || 3000;
@@ -14,11 +19,6 @@ const client = new pg.Client(`${DATABASE_URL}`);
 client.on('error', error => console.error(error));
 client.connect();
 
-const app = express();
-app.use(express.urlencoded({extended: true}));
-app.use(express.static('./public'));
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({extended: true}));
 
 app.get('/', ( req , res) => {
   let SQL = 'SELECT * FROM books';
@@ -26,13 +26,14 @@ app.get('/', ( req , res) => {
   client.query(SQL).then( sqlData => {
     if (sqlData.rows.length > 0) {
       sqlData.rows.forEach( val => {
-        booksData.push(new Book(val.image_url, val.title, val.author, val.description));
+        booksData.push(new Book(val.id, val.image_url, val.title, val.author, val.description));
       });
     }
     res.render('pages/index', { booksData : booksData, count : sqlData.rows.length });
   });
 });
-app.post('/show', ( req , res ) => {
+
+app.post('/search', ( req , res ) => {
   superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.searchType}+in${req.body.searchType}:${req.body.query}`).then( data => {
     books = [];
     for (let i = 0; i < 10; i++) {
@@ -41,7 +42,7 @@ app.post('/show', ( req , res ) => {
     const results = books.map( book => {
       return new Book(book.volumeInfo.imageLinks.smallThumbnail, book.volumeInfo.title, book.volumeInfo.authors, book.volumeInfo.description);
     });
-    res.render('pages/searches/show', { results : results });
+    res.render('pages/searches/search', { results : results });
   })
     .catch( error => {
       console.log(error);
@@ -49,6 +50,7 @@ app.post('/show', ( req , res ) => {
       res.status(500).send(error.message);
     })
 })
+
 app.get('/books/:id', ( req, res ) => {
   let SQL = 'SELECT * FROM books WHERE id=$1'
   let query = [req.params.id];
@@ -58,13 +60,16 @@ app.get('/books/:id', ( req, res ) => {
   })
 });
 
-function Book(img_url='public/styles/images/placeholderbook.png', title='Title', author='Unknown', description='No description') {
+// BOOK CONSTRUCTOR FUNCTION
+function Book( id=null, img_url='public/styles/images/placeholderbook.png', title='Title', author='Unknown', description='No description') {
+  this.id = id;
   this.img_url = img_url;
   this.title = title;
   this.author = author;
   this.description = description;
 }
 
+// SERVER LISTENS
 app.listen(PORT, () => {
   console.log('listening on', PORT);
 });
