@@ -3,13 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Results</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <h1>TEST</h1>
+<section id="view">
+  <header>
+    <h1>Best Books!</h1>
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+              <a href="/views/pages/index.ejs">Home</a>
+              <a href="/views/pages/error.ejs">error</a>
+              <a href="/show">result</a>
+            </div>
+          </div>
+    </nav>
+    <h2>Search Result</h2>
+  </header>
   <ul>
   <% results.forEach( result => { %>
-    <li><%= result.title %></li>
-    <%}) %>
+    <% if (result.img_url) { %>
+      <img src="<%= result.image_url %>" />
+      <% } %>
+      <li id="searchTitle"><%= result.title %> </li>
+      <li id="searchName"><%= result.author %> </li>
+      <li id="searchDesc"><%= result.description %> </li>
+    <%}) %> 
   </ul>
+  </section>
 </body>
 </html>

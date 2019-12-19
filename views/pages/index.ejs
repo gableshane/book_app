@@ -3,25 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>Proof of Life</title>
-  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+  <section id="view">
   <header>
-    <h1>Booklist</h1>
+    <h1>Best Books!</h1>
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+              <a href="/views/pages/index.ejs">Home</a>
+              <a href="/views/pages/error.ejs">error</a>
+              <a href="/show">result</a>
+            </div>
+          </div>
+    </nav>
+    <h2>Search by Title or Author</h2>
   </header>
   <main>
-    <form method="POST" action="/show">
-      <label>Search books
-      <input name="query" type="text">
+    <section id="form">
+    <form  id="item1" method="POST" action="/show">
+      <label class="items">
+      <input name="query" type="text" value="Enter a title or author">
       </label>
-      <label> Search by Author
+      <label class="items"> <span>Author</span>
       <input type="radio" name="searchType" value="Author">
     </label>
-    <label> Search by Title
+    <label class="items">  <span>Title</span>
       <input type="radio" name="searchType" value="Title">
       </label>
-      <input type="submit" value="search for a book">
+      <label class="items">
+      <input type="submit" value="Search the Google Books API">
+      </label>
+
     </form>
+  </section>
   </main>
+</section>
 </body>
 </html>
