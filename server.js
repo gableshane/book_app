@@ -20,7 +20,7 @@ client.on('error', error => console.error(error));
 client.connect();
 
 const errorHandler = function (req , res) {
-  console.log(error);
+  console.log('error');
   res.render('pages/error');
 }
 
@@ -53,7 +53,7 @@ const queryAll = function ( req, res ) {
 }
 // CALLBACK FUNCTION
 const apiAndStuff = function ( req , res ) {
-  superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.searchType}+in${req.body.searchType}:${req.body.query}`).then( data => {
+  superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.query}+in${req.body.searchType}`).then( data => {
     books = [];
     let isbn = null;
     for (let i = 0; i < 10; i++) {
