@@ -1,0 +1,15 @@
+<form method="POST" action="">
+    <input name="title" class="hideForm" type="hidden" value="<%= oneBook.title %>">
+    <input name="author" class="hideForm" type="hidden" value="<%= oneBook.author %>">
+    <input name="description" class="hideForm" type="hidden" value="<%= oneBook.description %>">
+    <input name="isbn" class="hideForm" type="hidden" value="<%= oneBook.isbn %>">
+    <input name="image_url" type="hidden" value="<%= oneBook.img_url %>">
+    <input name="bookshelf" class="hideForm" type="hidden" value="<%= oneBook.bookshelf %>">
+    <select>
+      <% bookShef.forEach( bookshelf => { %>
+        <option> <%= bookshelf %> </option>
+        <%console.log(bookShef) %>
+        <%}) %>
+    </select>
+    <input id="submitEdit" type="hidden" value="Save">
+</form>
