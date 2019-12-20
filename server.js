@@ -56,7 +56,8 @@ const queryAll = function ( req, res ) {
 }
 // CALLBACK FUNCTION
 const apiAndStuff = function ( req , res ) {
-  superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.searchType}+in${req.body.searchType}:${req.body.query}`).then( data => {
+  console.log(req.body.query,req.body.searchType)
+  superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.searchType}:${req.body.query}`).then( data => {
     books = [];
     let isbn = null;
     for (let i = 0; i < 10; i++) {
