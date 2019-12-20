@@ -31,11 +31,12 @@ const queryById = function ( req , res ) {
   let countBookshelf = 'SELECT DISTINCT bookshelf FROM books';
   let bookshelves;
   client.query(countBookshelf).then( sql => {
-    return bookshelves = sql.rows;
+    bookshelves = sql.rows;
+    return ;
   })
   client.query(SQL, query).then( sql => {
     let obj = sql.rows[0];
-    res.render('pages/detail', { oneBook : obj, bookShef : bookshelves });
+    res.render('pages/detail', { oneBook : obj, bookshelf : bookshelves });
   });
 }
 // CALLBACK FUNCTION
