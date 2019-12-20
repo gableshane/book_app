@@ -110,6 +110,27 @@ Estimate of time needed to complete:  30 minutes
 
 Start time: 10:55AM
 
-Finish time:
+Finish time: Unknown
 
-Actual time needed to complete:
+Actual time needed to complete: unknown
+
+
+Number and name of feature: 1. As a user, I want to update the details of a book so that it displays the way I want it to, according to my personalized preferences.
+
+Estimate of time needed to complete: an hour
+
+Start time: yesterday at noon
+
+Finish time: 10:45AM
+
+Actual time needed to complete: A day
+
+Number and name of feature: 2. As a user, I want to remove books from my collection so that it accurately represents my favorite books.
+
+Estimate of time needed to complete: 10 minutes
+
+Start time: 10:55
+
+Finish time: 11:02
+
+Actual time needed to complete: 7 minutes

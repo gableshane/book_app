@@ -8,6 +8,8 @@ const app = express();
 app.use(express.static('./public'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
 
 // GLOBAL VARIABLES
 let books = [];
@@ -20,7 +22,7 @@ client.on('error', error => console.error(error));
 client.connect();
 
 const errorHandler = function (req , res) {
-  console.log(error);
+  console.log('error');
   res.render('pages/error');
 }
 
@@ -80,11 +82,27 @@ const insertDb = function (req , res ) {
     });
   })
 }
-
+//CALLBACK FUNCTION
+const updateYourBook = function (req , res ) {
+  let SQL = 'UPDATE books SET author=$1, title=$2, isbn=$3, image_url=$4, description=$5, bookshelf=$6 WHERE id=$7';
+  console.log(req.body);
+  let data = [req.body.author, req.body.title, req.body.isbn, req.body.image_url, req.body.description, req.body.bookshelf, req.params.id];
+  client.query(SQL, data).then( sql => {
+    res.redirect('/');
+  });
+}
+//CALLBACK FUNCTION 
+const deleteYourBook = function (req , res ) {
+  client.query('DELETE FROM books WHERE id=$1',[req.params.id]).then( sql => {
+    res.redirect('/');
+  })
+}
 app.get('/', queryAll);
 app.post('/search', apiAndStuff );
 app.get('/books/:id', queryById);
 app.post('/books', insertDb);
+app.put('/books/:id', updateYourBook);
+app.delete('/books/:id', deleteYourBook);
 
 // BOOK CONSTRUCTOR FUNCTION
 function Book( id=null, img_url='public/styles/images/placeholderbook.png', title='Title', author='Unknown', description='No description', isbn=null,bookshelf=null) {

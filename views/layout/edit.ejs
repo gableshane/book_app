@@ -1,9 +1,10 @@
-<form method="POST" action="">
+<form method="POST" action="/books/<%= oneBook.id %>?_method=PUT">
+  <% console.log(oneBook.id) %>
     <input name="title" class="hideForm" type="hidden" value="<%= oneBook.title %>">
     <input name="author" class="hideForm" type="hidden" value="<%= oneBook.author %>">
     <input name="description" class="hideForm" type="hidden" value="<%= oneBook.description %>">
     <input name="isbn" class="hideForm" type="hidden" value="<%= oneBook.isbn %>">
-    <input name="image_url" class="hideForm" type="hidden" value="<%= oneBook.img_url %>">
+    <input name="image_url" type="hidden" value="<%= oneBook.image_url %>">
     <input name="bookshelf" class="hideForm" type="hidden" value="<%= oneBook.bookshelf %>">
     <select>
       <% bookshelf.forEach( book => { %>
